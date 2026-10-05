@@ -36,7 +36,7 @@ class PropAccount(models.Model):
         return Decimal('0.00')
     
     win_ratio = profitable_trades / total_trades * 100
-    return win_ratio
+    return Decimal(str(round(win_ratio, 2)))
 
 class TradeRecord(models.Model):
   ticker = models.CharField(max_length=6)
